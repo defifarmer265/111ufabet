@@ -1,0 +1,237 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "Register",
+      "field": "BankAccount",
+      "type": "BankAccount",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "BankAccount"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "BankAccount"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"Register_BankAccount\""
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "BankAccount"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[bankAccountId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "BankAccount"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Register",
+      "field": "Bonus",
+      "type": "Bonus",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "Bonus"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "Bonus"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"Register_Bonus\""
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "Bonus"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[bonusId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "Bonus"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Register",
+      "field": "bonus"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Register",
+      "field": "bankAccount"
+    },
+    {
+      "tag": "CreateField",
+      "model": "BankAccount",
+      "field": "ListBankAcc",
+      "type": "Register",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "BankAccount",
+          "field": "ListBankAcc"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "BankAccount",
+          "field": "ListBankAcc"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"Register_BankAccount\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "BankAccount",
+      "field": "Bank",
+      "type": "Bank",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "BankAccount",
+          "field": "Bank"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "BankAccount",
+          "field": "Bank"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"BankAccount_Bank\""
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "BankAccount",
+          "field": "Bank"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[bankId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "BankAccount",
+          "field": "Bank"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "BankAccount",
+      "field": "listBankAcc"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "BankAccount",
+      "field": "bank"
+    }
+  ]
+}

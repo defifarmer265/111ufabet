@@ -1,0 +1,77 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "Register",
+      "field": "bonusId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Register",
+      "field": "Bonus",
+      "type": "Bonus",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "Bonus"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "Bonus"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"Register_Bonus\""
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "Bonus"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[bonusId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "Bonus"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Register",
+      "field": "bonus"
+    }
+  ]
+}

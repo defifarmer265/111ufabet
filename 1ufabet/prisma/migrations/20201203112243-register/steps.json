@@ -1,0 +1,151 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "Bank",
+      "field": "nameShort",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Bank",
+      "field": "nameFull",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Bank",
+      "field": "name"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Bank",
+      "field": "accountNumber"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Register",
+      "field": "bankAccountId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Register",
+      "field": "bankAccount",
+      "type": "BankAccount",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "bankAccount"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "bankAccount"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"Register_BankAccount\""
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "bankAccount"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[bankAccountId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Register",
+          "field": "bankAccount"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Register",
+      "field": "registerId"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Register",
+      "field": "register"
+    },
+    {
+      "tag": "CreateField",
+      "model": "BankAccount",
+      "field": "bankId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "BankAccount",
+      "field": "bankName",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "BankAccount",
+      "field": "number",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "BankAccount",
+      "field": "bankAccId"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "BankAccount",
+      "field": "name"
+    },
+    {
+      "tag": "UpdateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "BankAccount",
+          "field": "bank"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "newValue": "[bankId]"
+    }
+  ]
+}
