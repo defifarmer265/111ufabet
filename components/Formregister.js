@@ -2,12 +2,7 @@ import { gql, useMutation, useQuery } from '@apollo/client';
 import { useEffect,useState } from 'react';
 import Swal from 'sweetalert2';
 
-// function changeData(){
-//     const [value, setValue] = useState('');
-    
-//     const onChange2 = Event => setQuery(Event.target.value);
-// }
-    
+
 const ADD_TODO = gql`
 mutation AddTodo($data:RegisterCreateInput!){
     createOneRegister(
@@ -18,24 +13,6 @@ mutation AddTodo($data:RegisterCreateInput!){
 }
 `;
 
-// export function registerform(props){
-//     const [name, setPhone ] = useState("");
-
-//     const handleSubmit = (evt) => {
-//         evt.preventDefault();
-//         alert(`submitting Name ${phone}`)
-//     }
-// }
-// function RegisterFrom(){
-//     e.preventDefault();
-//     console.log(form.phone, form.firstName);
-// }
-// const updateField = e => {
-//     setValues({
-//         ...form,
-//         [e.target.phone]: e.target.value
-//     });
-// };
 const Formregister = () => {
 
   const [valuePhone,setValuePhone] = useState('');
@@ -47,11 +24,8 @@ const Formregister = () => {
   const [valueLineId,setValueLineId] = useState('');
   const [valueBonus,setValueBonus] = useState('');
   const [addTodo, { data }] = useMutation(ADD_TODO);
+  const axios = require('axios');
 
-//   useEffect(()=>{
-//     addTodo()
-//     console.log(data)
-//   },[])
     return(
     <div className="overlay-display">
         <form className="pure-u-1 t-center registration-form display-form" id="text" method="post" action="/https://ufa777b.automebet.com/ufa777b/ufabet/register"
@@ -83,7 +57,15 @@ const Formregister = () => {
                         }
                     }
                 }
-            }).then((data)=>{
+            })
+            axios.get('https://ufa777b.automebet.com/ufa777b/ufabet/register')
+            .then((res)=> {
+              console.log(res);
+            })
+            .catch((err)=> {
+              console.log(err);
+            })
+            .then((data)=>{
                 Swal.fire({
                     icon: 'success',
                     title:'สมัครสมาชิกเรียบร้อย'
@@ -100,73 +82,6 @@ const Formregister = () => {
             <fieldset className="pure-g form-bottom border-register p-relative">
                 <span className="close-register">×</span>
                 <div className="pure-u-1 margin-top-1"><h2>สมัครสมาชิก</h2></div>
-                {/* <div class="x-step-register">
-                    <div class="d-block">
-                        <div class="p-center-02">
-                            <div class="p-center-03">
-                                <div class="-step-box-outer m-auto step-active">
-                                    <div class="--step-box-inner text-center f-9">
-                                        1
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="-border">
-                                <hr />
-                            </div>
-                            <div class="p-center-03">
-                                <div class="-step-box-outer m-auto ">
-                                    <div class="--step-box-inner text-center f-9">
-                                        2
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="-border">
-                                <hr />
-                            </div>
-                            <div class="p-center-03">
-                                <div class="-step-box-outer m-auto ">
-                                    <div class="--step-box-inner text-center f-9">
-                                        3
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="-border">
-                                <hr />
-                            </div>
-                            <div class="p-center-03">
-                                <div class="-step-box-outer m-auto ">
-                                    <div class="--step-box-inner text-center f-9">
-                                        4
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
-            {/* <div className="container2">
-                <div className="progress-bar d-flex">
-                    <div className="step">
-                        <div className="bullet">
-                            <span>1</span>
-                        </div>
-                    </div>
-                    <div className="step">
-                        <div className="bullet">
-                            <span>2</span>
-                        </div>
-                    </div>
-                    <div className="step">
-                        <div className="bullet">
-                            <span>3</span>
-                        </div>
-                    </div>
-                    <div className="step">
-                        <div className="bullet">
-                            <span>4</span>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
                 <div className="pure-u-1 padding-bottom-1"><img src="assets/images/shared/ic_register.png" alt="" width="90px;"/></div>
                 <div className="pure-g p-relative">
                     <div className="pure-u-19-24 p-center padding-bottom-1">
@@ -435,7 +350,6 @@ const Formregister = () => {
                     </div>
                 </div>
                 <div className="pure-u-1">
-                    {/* <input type="button" name="previous" value="Previous" className="btn-previous pointer btn-register-2"/> */}
                     <input type="submit" name="submit" value="submit" className="submit pointer btn-register-2 margin-left-2"/>
                 </div>
             </fieldset>
